@@ -48,8 +48,12 @@ def download_with_progress(url, destination):
 model = models.resnet18(pretrained=False)
 model.fc = torch.nn.Linear(model.fc.in_features, 1)  # binary classifier
 
-# Google Drive direct download link
-model_url = "https://drive.google.com/uc?export=download&id=15fLW_oFGFnqYSMa4BfGnXjeYIWo2bNr_"
+
+model_url = os.environ.get("MODEL_URL")
+
+if not model_url:
+    raise ValueError("Missing MODEL_URL environment variable. Set it in Render.")
+
 weights_path = os.path.join(os.path.dirname(__file__), "resnet18_weights.pth")
 
 download_with_progress(model_url, weights_path)
