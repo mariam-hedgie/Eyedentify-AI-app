@@ -9,4 +9,3 @@ scikit-learn
 tqdm
 gunicorn
 mediapipe
-
