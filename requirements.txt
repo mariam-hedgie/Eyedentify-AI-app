@@ -7,3 +7,4 @@ numpy
 Pillow
 scikit-learn
 tqdm
+gunicorn
