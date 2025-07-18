@@ -1,9 +1,0 @@
-# render.yaml
-services:
-  - type: web
-    name: eyedentify-ai-app
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
-    plan: free
-    pythonVersion: 3.10.13
